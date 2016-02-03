@@ -32,5 +32,10 @@ namespace Hello
             //Al hacer click en el botón, nos devuelve esa frase, en nameInput.Text, que es lo que introducimos
             greetingOutput.Text = "Hello, " + nameInput.Text + "!";
         }
+
+        private void ButtonClick2(object sender, RoutedEventArgs e)
+        {
+            quit.Text = "BYE BYE user!!!!";
+        }
     }
 }

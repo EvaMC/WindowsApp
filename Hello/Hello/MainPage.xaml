@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource SystemControlPageBackgroundAltMediumBrush}">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
                 <VisualState x:Name="wideState">
@@ -22,19 +22,26 @@
                     <VisualState.Setters>
                         <Setter Target="inputPanel.Orientation" Value="Vertical"/>
                         <Setter Target="inputButton.Margin" Value="0,4,0,0"/>
+                        <Setter Target="outputPanel.Orientation" Value="Vertical"/>
+                        <Setter Target="outputButton.Margin" Value="0,4,0,0"/>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-
+       
         <StackPanel x:Name="contentPanel" Margin="8,32,0,0">
-            <TextBlock Text="Hello, world!" Margin="0,0,0,40"/>
+            <TextBlock Text="Hello, world!"  Margin="0,0,0,40"/>
             <TextBlock Text="What's your name?"/>
-            <StackPanel x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
+            <StackPanel x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,10" Height="75">
                 <TextBox x:Name="nameInput" Width="280" HorizontalAlignment="Left"/>
                 <Button x:Name="inputButton" Content="Say &quot;Hello&quot;" Click="ButtonClick"/>
             </StackPanel>
-            <TextBlock x:Name="greetingOutput"/>
+            <TextBlock Text="Your answer is coming..."/>
+            <StackPanel x:Name="outputPanel" Orientation="Horizontal" Margin="0,20,0,10" Height="100">
+                <TextBox x:Name="greetingOutput" Width="280" HorizontalAlignment="Left"/>
+                <Button x:Name="outputButton" Content="Goodbye" Click="ButtonClick2"/>
+            </StackPanel>
+            <TextBlock x:Name="quit" Width="280" HorizontalAlignment="Center"/>
         </StackPanel>
     </Grid>
 </Page>
